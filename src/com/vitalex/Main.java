@@ -12,7 +12,6 @@ public class Main {
         System.out.println("Введите арифметическую операцию:");
         String res = calc(sc.nextLine().toUpperCase(Locale.ROOT));
         System.out.println(res);
-        // System.out.println("Ответ - " + result);
         sc.close();
     }
 
@@ -28,13 +27,11 @@ public class Main {
         }
 
         if (gv.checkRoman(value[0]) && gv.checkRoman(value[1])){
-            //System.out.println("Оба значения римские!!!\n\n" );
             return (gv.romanResult(value[0], value[1]));
 
         }
 
         else if (gv.checkArab(value[0]) && gv.checkArab(value[1])){
-            //System.out.println("Оба значения арабские!!!");
             return (gv.arabResult(value[0], value[1]));
 
         }
@@ -46,7 +43,6 @@ public class Main {
             return ("Значения должны быть в диапазоне от 1 до 10 или от I до X!!!");
         }
 
-       // return value[0] + value[1];
     }
 
     private static String getDelimiter(String in) {

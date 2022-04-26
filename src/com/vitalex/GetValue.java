@@ -4,7 +4,7 @@ class GetValue {
     private String delimiter = "";
 
     public String[] getValue(String str){
-        int x, y = 0;
+
         String[] value = str.trim().split(delimiter);
         if (value.length == 2){
             return value;
@@ -30,10 +30,7 @@ class GetValue {
             }
         }
         //System.out.println("Результат " + res);
-        if (res > 0 && res <= 10 && val ==""){
-            return true;
-        }
-        return false;
+        return res > 0 && res <= 10 && val.trim().isEmpty();
     }
 
 

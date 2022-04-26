@@ -10,8 +10,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите арифметическую операцию:");
-        String result = calc(sc.nextLine().toUpperCase(Locale.ROOT));
-        System.out.println("Ответ - " + result);
+        String res = calc(sc.nextLine().toUpperCase(Locale.ROOT));
+        System.out.println(res);
+        // System.out.println("Ответ - " + result);
         sc.close();
     }
 
@@ -27,25 +28,25 @@ public class Main {
         }
 
         if (gv.checkRoman(value[0]) && gv.checkRoman(value[1])){
-            System.out.println("Оба значения римские!!!\n\n" );
-            System.out.println(gv.romanResult(value[0], value[1]));
+            //System.out.println("Оба значения римские!!!\n\n" );
+            return (gv.romanResult(value[0], value[1]));
 
         }
 
         else if (gv.checkArab(value[0]) && gv.checkArab(value[1])){
-            System.out.println("Оба значения арабские!!!");
-            System.out.println(gv.arabResult(value[0], value[1]));
+            //System.out.println("Оба значения арабские!!!");
+            return (gv.arabResult(value[0], value[1]));
 
         }
         else if (gv.checkArab(value[0]) && gv.checkRoman(value[1]) || gv.checkArab(value[1]) && gv.checkRoman(value[0])){
-            System.out.println("Вы ввели и арабские и римские значения!!!");
+            return ("Вы ввели и арабские и римские значения!!!");
 
         }
         else {
-            System.out.println("Значения должны быть в диапазоне от 1 до 10 или от I до X!!!");
+            return ("Значения должны быть в диапазоне от 1 до 10 или от I до X!!!");
         }
 
-        return value[0] + value[1];
+       // return value[0] + value[1];
     }
 
     private static String getDelimiter(String in) {

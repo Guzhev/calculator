@@ -79,7 +79,9 @@ class GetValue {
             case "/" -> z = x / y;
         }
 
-
+        if (z < 0 ){
+            return "в римской системе нет отрицательных чисел";
+        }
         for (int i = 0; i < dec.length; i++ ) {
             while (z >= dec[i]) {
                 z -= dec[i];
@@ -87,7 +89,7 @@ class GetValue {
             }
         }
 
-        System.out.println("Результат - " + romanRes);
+       // System.out.println("Результат - " + romanRes);
         return romanRes;
     }
 
@@ -99,7 +101,7 @@ class GetValue {
             y = Integer.parseInt(arabValY);
         }
         catch (NumberFormatException e){
-            System.err.println("Срока не вяляется числом!");
+            System.err.println("Строка не является числом!");
         }
 
         if (y == 0){
